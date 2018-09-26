@@ -1,7 +1,8 @@
 {
-    "name": "yourproject/yourproject",
+    "name": "c-manager/main",
+    	"description": "Xerox copy manager",
     "type": "project",
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.5"
     }
 }
