@@ -28,4 +28,3 @@ if(mysqli_query($link,$sql)){
 
 // clossing connection
 mysqli_close($link);
-https://launchpad.net/onboardCreate your macros here.
