@@ -6,4 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SocialConnect\\Common\\' => array($vendorDir . '/socialconnect/common/src'),
+    'SocialConnect\\' => array($vendorDir . '/socialconnect/auth/src'),
+    'Facebook\\' => array($vendorDir . '/facebook/graph-sdk/src/Facebook'),
 );

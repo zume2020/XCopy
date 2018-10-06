@@ -1,1 +1,179 @@
-[]
+[
+    {
+        "name": "facebook/graph-sdk",
+        "version": "5.6.3",
+        "version_normalized": "5.6.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/facebook/php-graph-sdk.git",
+            "reference": "90e92bd1816fe718e55184ab85910dfcf488432c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/90e92bd1816fe718e55184ab85910dfcf488432c",
+            "reference": "90e92bd1816fe718e55184ab85910dfcf488432c",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.4|^7.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": "~5.0",
+            "mockery/mockery": "~0.8",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client",
+            "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5"
+        },
+        "time": "2018-07-03T02:25:00+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Facebook\\": "src/Facebook/"
+            },
+            "files": [
+                "src/Facebook/polyfills.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Facebook Platform"
+        ],
+        "authors": [
+            {
+                "name": "Facebook",
+                "homepage": "https://github.com/facebook/php-graph-sdk/contributors"
+            }
+        ],
+        "description": "Facebook SDK for PHP",
+        "homepage": "https://github.com/facebook/php-graph-sdk",
+        "keywords": [
+            "facebook",
+            "sdk"
+        ]
+    },
+    {
+        "name": "socialconnect/auth",
+        "version": "2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocialConnect/auth.git",
+            "reference": "66b841f1762810529f7674ec15a074741e41a25f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SocialConnect/auth/zipball/66b841f1762810529f7674ec15a074741e41a25f",
+            "reference": "66b841f1762810529f7674ec15a074741e41a25f",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "php": ">=7.0",
+            "socialconnect/common": "^1.1"
+        },
+        "replace": {
+            "socialconnect/oauth1": "self.version",
+            "socialconnect/oauth2": "self.version",
+            "socialconnect/openid": "self.version",
+            "socialconnect/openid-connect": "self.version",
+            "socialconnect/provider": "self.version"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.5.8",
+            "squizlabs/php_codesniffer": "~3.0.1"
+        },
+        "time": "2018-08-29T11:35:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SocialConnect\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dmitry Patsura",
+                "email": "talk@dmtry.me"
+            }
+        ],
+        "description": "Social Connect Auth Component",
+        "keywords": [
+            "amazon",
+            "auth",
+            "bitbucket",
+            "facebook",
+            "github",
+            "gitlab",
+            "google",
+            "login",
+            "oauth",
+            "slack",
+            "socialconnect",
+            "twitch",
+            "twitter",
+            "vk"
+        ]
+    },
+    {
+        "name": "socialconnect/common",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocialConnect/common.git",
+            "reference": "d9bc99b90a3d51bc6c753000079629bc33a63c8f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SocialConnect/common/zipball/d9bc99b90a3d51bc6c753000079629bc33a63c8f",
+            "reference": "d9bc99b90a3d51bc6c753000079629bc33a63c8f",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "doctrine/cache": "^1.5.1",
+            "ext-curl": "*",
+            "guzzlehttp/guzzle": "^5.3|^6.0",
+            "phpunit/phpunit": "^4.2",
+            "squizlabs/php_codesniffer": "^2.8"
+        },
+        "suggest": {
+            "ext-curl": "Allows to use Http\\Client\\Curl",
+            "guzzlehttp/guzzle": "Allows to use Http\\Client\\Guzzle, require guzzlehttp/guzzle:~5.3|~6.0."
+        },
+        "time": "2018-04-11T11:24:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "SocialConnect\\Common\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dmitry Patsura",
+                "email": "talk@dmtry.me"
+            }
+        ],
+        "description": "Common component"
+    }
+]

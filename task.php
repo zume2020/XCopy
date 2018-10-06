@@ -11,8 +11,6 @@
     }else $userName = $_SESSION['userName'];
  $id =  $_GET['id'];
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,12 +69,13 @@ echo "<h3>".$row['name']."</h3>";
 echo "<h4>Rs".$row['pirce']."</h5>";  
 
 ?>
-
-        <table  class="table table-condensed table-bordered table-hover table-striped">
+<div style="width: 40%" >
+<table class="table table-condensed table-bordered table-hover table-striped">
            <thead>
               <tr>
                  <th>#id</th>
                  <th>name</th>
+                 <th>payment</th>
               </tr>
            </thead>
            <tbody>
@@ -84,7 +83,7 @@ echo "<h4>Rs".$row['pirce']."</h5>";
             <?php
 
 $sql =  "SELECT "
-      . " users.id,users.name "
+      . " users.id, users.name, task_reg.payment"
       . " FROM "
       . " task_reg "
       . " JOIN users ON users.id = task_reg.use_id "
@@ -92,26 +91,29 @@ $sql =  "SELECT "
       . " WHERE "
       . " topics.id=". $id;
 
-//echo($sql);
+        //echo($sql);
         $result = mysqli_query($link, $sql);
         $num_rows = mysqli_num_rows($result);
 
-            if($result)if ($result->num_rows ) {
-                while($row = $result->fetch_array()) {
 
-                echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["name"] . "</td>";
-                echo "<td><input type='checkbox'></td>";
-                echo "<td><input type='text'></td>";
+          if($result)if ($result->num_rows ) {
+              while($row = $result->fetch_array()) {
 
-                echo "</tr>";
-                }
-            }
-            ?>
+              $checkbox = ($row['payment']=='1') ? "checked" : "" ;
+
+              echo "<tr>";
+              echo "<td>" . $row["id"] . "</td>";
+              echo "<td>" . $row["name"] . "</td>";
+              echo "<td><input type='checkbox' class='cbx' usrid='".$row['id']."' topid='".$id."' ".$checkbox."></td>";
+              echo "</tr>";   
+          }
+        }
+
+?>
 
            </tbody>
-        </table> 
+        </table>
+</div> 
 
         </div>
         </div>
@@ -127,32 +129,62 @@ $sql =  "SELECT "
                           </button>
                           <h4 class="modal-title" id="myModalLabel2">New</h4>
                         </div>
+
                     <div class="modal-body">
 
-
-                      </div>
+                    </div>
 
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-primary">Save</button>
                 </div>
 
                 </form>
-
-                      </div>
-                    </div>
-                  </div>
-
-
-
+              </div>
+            </div>
+          </div>
     </div>
     </div>
     
-    <script src="assets/jquery.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+$(".cbx").click(function(){
+var usr_id = $(this).attr('usrid');
+var top_id = $(this).attr('topid');
+var cbstat = $(this).is(':checked') ? 'ON' : 'OFF';
+
+
+//console.log(ckb);
+
+
+
+      $.post("process.php",{
+       usrid: usr_id,
+       topid: top_id,
+       cstat: cbstat
+      },
+      function(data) {
+      //alert(data);
+      //$('#form')[0].reset(); //To reset form fields after submission
+      
+        $('#alert').fadeTo(2000,500).slideUp(500,function(){ //fade out
+          $('#alert').addClass('hiden'); //adds a class .hidden
+        });
     
+      });
+        
+        
+});
+});
+
+</script>
+
+
+
+
+
 </body>
 </html>
-
-
-
-

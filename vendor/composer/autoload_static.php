@@ -6,9 +6,42 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit1dcb8e02156ec1da7aa82bee4e4069d8
 {
+    public static $files = array (
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'SocialConnect\\Common\\' => 21,
+            'SocialConnect\\' => 14,
+        ),
+        'F' => 
+        array (
+            'Facebook\\' => 9,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'SocialConnect\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialconnect/common/src',
+        ),
+        'SocialConnect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/socialconnect/auth/src',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1dcb8e02156ec1da7aa82bee4e4069d8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1dcb8e02156ec1da7aa82bee4e4069d8::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

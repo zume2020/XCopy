@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 20, 2018 at 02:41 PM
+-- Generation Time: Oct 06, 2018 at 11:35 PM
 -- Server version: 5.5.61-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.25
 
@@ -19,6 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `xcopy`
 --
+
+CREATE DATABASE IF NOT EXISTS `xcopy` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `xcopy`;
 
 -- --------------------------------------------------------
 
@@ -42,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `host` (
 CREATE TABLE IF NOT EXISTS `task_reg` (
   `top_id` int(11) NOT NULL,
   `use_id` int(11) NOT NULL,
+  `payment` int(1) DEFAULT '0',
   PRIMARY KEY (`top_id`,`use_id`),
   KEY `task_reg_ibfk_2` (`use_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -50,12 +54,12 @@ CREATE TABLE IF NOT EXISTS `task_reg` (
 -- Dumping data for table `task_reg`
 --
 
-INSERT INTO `task_reg` (`top_id`, `use_id`) VALUES
-(1, 1),
-(1, 2),
-(2, 3),
-(1, 4),
-(2, 5);
+INSERT INTO `task_reg` (`top_id`, `use_id`, `payment`) VALUES
+(1, 1, 1),
+(1, 2, 1),
+(1, 4, 1),
+(2, 3, NULL),
+(2, 5, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,19 +105,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `psw`, `mail`, `act`, `con`) VALUES
-(1, 'sumithran', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'sumithran@gmail.com', 1, '2018-09-20 07:05:49'),
-(2, 'pranav', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'pranav@gmail.com', 0, '2018-09-20 07:10:12'),
-(3, 'kiran', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'kiran@gmail.com', 0, '2018-09-20 07:10:12'),
-(4, 'sadiq', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'sadiq@gmail.com', 0, '2018-09-20 07:11:40'),
-(5, 'rahul', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'rahul@gmail.com', 0, '2018-09-20 07:11:40'),
-(6, 'renjith', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'renjith@gmail.com', 0, '2018-09-20 07:11:40'),
-(7, 'yedu', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'yedu@gmail.com', 0, '2018-09-20 07:11:40'),
-(8, 'steeven', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'steeven@gmail.com', 0, '2018-09-20 07:11:40'),
-(9, 'shamran', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'shamran@gmail.com', 0, '2018-09-20 07:11:40'),
-(10, 'amal', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'amal@gmail.com', 0, '2018-09-20 07:11:40'),
-(11, 'anoop', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'anoop@gmail.com', 0, '2018-09-20 07:11:40'),
-(12, 'ashmin', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'ashmin@gmail.com', 0, '2018-09-20 07:11:40'),
-(13, 'alan', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'alan@gmail.com', 0, '2018-09-20 07:11:40');
+(1, 'sumithran', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'sumithran@india.com', 1, '2018-10-02 06:06:28'),
+(2, 'pranav', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'pranav@gmail.com', 0, '2018-09-20 07:10:12'),
+(3, 'kiran', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'kiran@gmail.com', 0, '2018-09-20 07:10:12'),
+(4, 'sadiq', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'sadiq@gmail.com', 0, '2018-09-20 07:11:40'),
+(5, 'rahul', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'rahul@gmail.com', 0, '2018-09-29 14:38:12');
 
 --
 -- Constraints for dumped tables

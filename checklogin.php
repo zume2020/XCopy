@@ -8,11 +8,11 @@
 	// 	header("Location: home.php");//?????
 	// 	exit;
 	// }
-	
+
 	$error = false;
 	
 	if( isset($_POST['btn-login']) ) {	
-		
+
 		// prevent sql injections/ clear user invalid inputs
 		$email = trim($_POST['email']);
 		$email = strip_tags($email);
@@ -38,7 +38,7 @@
 			//////////////////////////////////////////////
 			echo $passError;
 		}
-		
+
 		// if there's no error, continue to login
 		if (!$error) {
 			
@@ -49,28 +49,36 @@
 			while($row=mysqli_fetch_array($res))
 			{
 			$count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
-			
+
+
+echo $password . "<br>" . $row['psw'];
+
+
+
+
 			if( $count == 1 && $row['psw']==$password ) {
 				$_SESSION['userName'] = $row['name'];
 				$_SESSION['userId']   = $row['id'];
 
+
+
+
 				header("Location: index.php");
 			} else{
-				echo "exi1";
 				echo mysqli_error($link);	
 			} 
 			}
 			
 				
 		}else{
-				$errMSG = "Incorrect Credentials, Try again...";
-				$_SESSION['inc_cre']=$errMSG;
-				$_POST['inc_cre']=$_SESSION['inc_cre'];			
+				echo "Incorrect Credentials, Try again...";
+				//$_SESSION['inc_cre']=$errMSG;
+				////$_POST['inc_cre']=$_SESSION['inc_cre'];			
 		}
 		
 	} 
 
 		//incorrect credentials
 		//header("Location: index");
-		echo $sql ." >>count " .$count ." userId>> ". $row['userId'] ."usrepass>>".$row['userPass'] ;
+		echo $sql ." <br>count " .$count ."<br> userId>> ". $row['userId'] ."<br>usrepass>>".$row['psw'] ;
 ?>

@@ -36,11 +36,11 @@
 
 <br>
 
-<button name="btn-login">LOG IN</button>
+<button name="btn-signup">Create</button>
 
 <br>
 
-<a href="signup.php">Already have a membership?</a>
+<a href="login.php">Already have a membership?</a>
 
 </form>
 

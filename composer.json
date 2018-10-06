@@ -1,8 +1,9 @@
 {
     "name": "c-manager/main",
-    	"description": "Xerox copy manager",
+        "description": "Xerox copy manager",
     "type": "project",
     "require": {
-        "php": ">=5.5"
+        "php": ">=5.5",
+        "facebook/graph-sdk": "^5.6"
     }
 }
