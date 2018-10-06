@@ -3,11 +3,11 @@
 	session_start();
 	require_once 'connect.php';
 	
-	// it will never let you open index(login) page if session is set
-	// if ( isset($_SESSION['user'])!="" ) {
-	// 	header("Location: home.php");//?????
-	// 	exit;
-	// }
+	//it will never let you open index(login) page if session is set
+	if ( isset($_SESSION['userName'])!="" ) {
+		header("Location: index.php");//?????
+		exit;
+	}
 
 	$error = false;
 	

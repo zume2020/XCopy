@@ -6,7 +6,7 @@
 
     // if session is not set this will redirect to login page
     if( !isset($_SESSION['userName']) ) {
-        header("Location: login");
+        header("Location: login.php");
         exit;
     }else $userName = $_SESSION['userName'];
  $id =  $_GET['id'];
