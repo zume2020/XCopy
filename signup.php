@@ -4,7 +4,7 @@
 	require_once 'connect.php';
 	
 	//it will never let you open signup page if session is set
-	if (!empty($_SESSION['userId'])) {
+	if (!empty($_SESSION['userName'])) {
 		header("Location: index.php");
 		exit;
 	}
