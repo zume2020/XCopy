@@ -1,2 +1,0 @@
-AllowOverride All
-ErrorDocument 404 http://localhost/CManager/error.php

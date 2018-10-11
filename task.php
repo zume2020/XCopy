@@ -66,9 +66,13 @@
 $result = mysqli_query($link, "SELECT `name`, `pirce` FROM `topics` WHERE `id`='".$id."'");
 $row = $result->fetch_assoc();
 echo "<h3>".$row['name']."</h3>";
-echo "<h4>Rs".$row['pirce']."</h5>";  
+$pirce = $row['pirce'];
+echo "<h4>Rs".$pirce."</h5>";  
 
 ?>
+
+<div id="amt"></div>
+
 <div style="width: 40%" >
 <table class="table table-condensed table-bordered table-hover table-striped">
            <thead>
@@ -91,7 +95,7 @@ $sql =  "SELECT "
       . " WHERE "
       . " topics.id=". $id;
 
-        //echo($sql);
+        echo($sql);
         $result = mysqli_query($link, $sql);
         $num_rows = mysqli_num_rows($result);
 
@@ -151,6 +155,19 @@ $sql =  "SELECT "
 <script type="text/javascript">
 
 $(document).ready(function(){
+
+function status() {
+  var n = $("input:checked").length;
+  var amt = '<?php echo $pirce;?>';
+  var str = amt+'x'+n+'='+'<b>'+(amt*n)+'</b>';
+
+$("#amt").html(str);
+}
+
+
+status();
+
+
 $(".cbx").click(function(){
 var usr_id = $(this).attr('usrid');
 var top_id = $(this).attr('topid');
@@ -158,7 +175,7 @@ var cbstat = $(this).is(':checked') ? 'ON' : 'OFF';
 
 
 //console.log(ckb);
-
+status();// move to on sucss inside ajax
 
 
       $.post("process.php",{

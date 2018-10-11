@@ -1,6 +1,6 @@
 <?php
 
-error_reporting( E_ALL & ~E_DEPRECATED & ~E_NOTICE );
+error_reporting( E_ALL );
 
 require_once 'connect.php';
 
@@ -30,6 +30,7 @@ if (isset($cstat AND !empty($cstat))) {
 			echo $sql." ". mysqli_error($link);
 		}
 
+}
 }
 
 // clossing connection
