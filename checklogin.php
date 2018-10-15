@@ -65,7 +65,7 @@ echo $password . "<br>" . $row['psw'];
 
 				header("Location: index.php");
 			} else{
-				echo mysqli_error($link);	
+				echo mysqli_error($link);
 			} 
 			}
 			
@@ -79,6 +79,6 @@ echo $password . "<br>" . $row['psw'];
 	} 
 
 		//incorrect credentials
-		//header("Location: index");
+		header("Location: login.php?error");
 		echo $sql ." <br>count " .$count ."<br> userId>> ". $row['userId'] ."<br>usrepass>>".$row['psw'] ;
 ?>

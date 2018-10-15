@@ -51,6 +51,8 @@
 <body>
 
 <a href="logout.php?logout">Sign Out</a></li>
+<a href="users.php">Users</a></li>
+
 
 
     <div id="wrapper">
@@ -86,16 +88,25 @@ echo "<h4>Rs".$pirce."</h5>";
 
             <?php
 
-$sql =  "SELECT "
-      . " users.id, users.name, task_reg.payment"
-      . " FROM "
-      . " task_reg "
-      . " JOIN users ON users.id = task_reg.use_id "
-      . " JOIN topics ON topics.id = task_reg.top_id "
-      . " WHERE "
-      . " topics.id=". $id;
+// $sql =  "SELECT "
+//       . " users.id, users.name, task_reg.payment"
+//       . " FROM "
+//       . " task_reg "
+//       . " JOIN users ON users.id = task_reg.use_id "
+//       . " JOIN topics ON topics.id = task_reg.top_id "
+//       . " WHERE "
+//       . " topics.id=". $id;
+
+
+$sql =  "SELECT users.id, users.name, IFNULL(task_reg.payment, 0) AS payment  "
+      . "FROM users "
+      . "LEFT JOIN task_reg ON users.id = task_reg.use_id "
+      . "LEFT JOIN topics ON topics.id = task_reg.top_id AND topics.id =". $id ." "
+      . "ORDER BY `users`.`name` ASC ";
+
 
         echo($sql);
+
         $result = mysqli_query($link, $sql);
         $num_rows = mysqli_num_rows($result);
 

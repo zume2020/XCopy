@@ -11,10 +11,8 @@ $cstat = $_POST['cstat'];
 
 
 
-if (!empty($cstat)) {
-//Insert query 
 
-if (isset($cstat AND !empty($cstat))) {
+if (isset($cstat)) {
 
 	if ($cstat=='ON') {
 		$sql = "UPDATE `task_reg` SET `payment`='1' WHERE (`top_id`='".$topid."' AND `use_id`='".$usrid."') ";
@@ -30,7 +28,7 @@ if (isset($cstat AND !empty($cstat))) {
 			echo $sql." ". mysqli_error($link);
 		}
 
-}
+
 }
 
 // clossing connection
