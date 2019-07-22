@@ -51,7 +51,7 @@
 			$count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
 
 
-echo $password . "<br>" . $row['psw'];
+                        //echo $password . "<br>" . $row['psw']; //for debugging purposes only
 
 
 
