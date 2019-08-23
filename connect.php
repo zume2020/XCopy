@@ -1,9 +1,8 @@
  <?php
-$servername = "localhost";
-$username = "root";
-$password = "admin";
-$database = "xcopy";
-
+$servername = "sql104.epizy.com";
+$username = "epiz_24211438";
+$password = "PKXjOFmMl6";
+$database = "epiz_24211438_optimus";
 
 // Create connection
 $link = mysqli_connect($servername, $username, $password, $database);
