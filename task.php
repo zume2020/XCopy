@@ -22,7 +22,7 @@
 
 // }
 
- $id =  $_GET['id'];
+ $id =  htmlentities($_GET['id']);
 
 ?>
 <!DOCTYPE html>
@@ -222,10 +222,5 @@ status();// move to on sucss inside ajax
 });
 
 </script>
-
-
-
-
-
 </body>
 </html>
