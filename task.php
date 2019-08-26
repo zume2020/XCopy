@@ -9,6 +9,19 @@
         header("Location: login.php");
         exit;
     }else $userName = $_SESSION['userName'];
+
+// switch ($_GET['action']) {
+
+//     case "show":
+//         $match_show = true;
+//         break;
+
+//     default: 
+//         // value is not on the list. React accordingly.
+//         echo "Unknown value for 'action'". 
+
+// }
+
  $id =  $_GET['id'];
 
 ?>
