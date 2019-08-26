@@ -54,24 +54,18 @@ if (isset($_GET['params']))
 
 <?php
 
+	$res = mysqli_query($link,"SELECT * FROM `topics` ");
 
-    $res = mysqli_query($link,"SELECT * FROM `topics` ");
+	if($res)if ($res->num_rows ) {
 
-    if($res)if ($res->num_rows ) {
+		while($row = $res->fetch_array()) {
+			echo "<div>";
+			echo "<span class='testlink'>".$row["name"]."</span>";
+			echo "<a href='task.php?id=".$row["id"]."' class='btn btn-primary' target='_blank'> Take Copy</a>";
+			echo "</div>";
+		  }
 
-
-          while($row = $res->fetch_array()) {
-echo "<div>";
-
-    echo "<span class='testlink'>".$row["name"]."</span>";
-
-    echo "<a href='task.php?id=".$row["id"]."' class='btn btn-primary' target='_blank'> Take Copy</a>";
-
-echo "</div>";
-
-        }
-
-}
+	}
 ?>
 
 
