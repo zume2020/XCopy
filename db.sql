@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `psw`, `mail`, `act`, `con`) VALUES
-(1, 'sumithran', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'sumithran@india.com', 1, '2018-10-02 06:06:28'),
+(1, 'sumithran', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'sumithran@india.com', 1, '2018-10-02 06:06:28'),
 (2, 'pranav', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'pranav@gmail.com', 0, '2018-09-20 07:10:12'),
 (3, 'kiran', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'kiran@gmail.com', 0, '2018-09-20 07:10:12'),
 (4, 'sadiq', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'sadiq@gmail.com', 0, '2018-09-20 07:11:40'),
