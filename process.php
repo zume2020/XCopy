@@ -1,5 +1,29 @@
 <?php
 
+////////////////////////////////////////////
+//               safe code                //
+////////////////////////////////////////////
+//     $mysqli = new mysqli("server", "username", "password", "database_name");
+
+//     // TODO - Check that connection was successful.
+
+//     $unsafe_variable = $_POST["user-input"];
+
+//     $stmt = $mysqli->prepare("INSERT INTO table (column) VALUES (?)");
+
+//     // TODO check that $stmt creation succeeded
+
+//     // "s" means the database expects a string
+//     $stmt->bind_param("s", $unsafe_variable);
+
+//     $stmt->execute();
+
+//     $stmt->close();
+
+//     $mysqli->close();
+////////////////////////////////////////////
+//               safe code                //
+////////////////////////////////////////////
 error_reporting( E_ALL );
 
 require_once 'connect.php';
